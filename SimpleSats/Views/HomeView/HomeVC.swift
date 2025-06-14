@@ -1,5 +1,5 @@
 //
-//  HomeVC.swift
+//  HomeV.swift
 //  SimpleSats
 //
 //  Created by Rovshan Rasulov on 12.06.25.
@@ -7,16 +7,19 @@
 
 import UIKit
 
-class HomeVC: UIViewController {
+class HomeV: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupGradientBackground()
         setupNavigationBar()
         setupBalanceSection()
+        actionButtonSection()
     }
 
-    private func setupGradientBackground() {        
+    
+    
+    private func setupGradientBackground() {
         let backgroundGlow = HomeViewBackgroundGlow()
         view.addSubview(backgroundGlow)
         backgroundGlow.translatesAutoresizingMaskIntoConstraints = false
@@ -37,22 +40,31 @@ class HomeVC: UIViewController {
         
         let notificationImage = UIImage(systemName: "bell.fill")
         let notificationButton = UIBarButtonItem(image: notificationImage, style: .plain, target: self, action: #selector(handleNotification))
-        notificationButton.tintColor = UIColor.buttonColorPink
+        notificationButton.tintColor = .buttonColorPink
         navigationItem.rightBarButtonItem = notificationButton
+    }
+    
+    @objc private func handleMenu() {
+
+    }
+    
+    @objc private func handleNotification() {
+        let notificationVC = NotificationV()
+        navigationController?.pushViewController(notificationVC, animated: true)
     }
     
     private func setupBalanceSection(){
         let availableBalanceLabel = UILabel()
         availableBalanceLabel.text = "Available balance"
-        availableBalanceLabel.font = UIFont(name: "Livvic-Regular", size: 16)
+        availableBalanceLabel.font = .regularLivvic(selfSize: 16)
         availableBalanceLabel.textColor = .lightGray
         availableBalanceLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(availableBalanceLabel)
         
         let balanceAmountLabel = UILabel()
         balanceAmountLabel.text = "$6,500"
-        balanceAmountLabel.font = UIFont(name: "Livvic-SemiBold", size: 40)
-        balanceAmountLabel.textColor = UIColor.pinkTextColor
+        balanceAmountLabel.font = .semiBoldLivvic(selfSize: 40)
+        balanceAmountLabel.textColor = .pinkTextColor
         balanceAmountLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(balanceAmountLabel)
         
@@ -74,14 +86,22 @@ class HomeVC: UIViewController {
         ])
     }
     
-    @objc private func handleMenu() {
-
+    private func actionButtonSection() {
+        let actionButtonView = HomeActionButtons()
+        view.addSubview(actionButtonView)
+    
+        actionButtonView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            actionButtonView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            actionButtonView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 236),
+            actionButtonView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            actionButtonView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+        ])
+        
     }
     
-    @objc private func handleNotification() {
-        let notificationVC = NotificationVC()
-        navigationController?.pushViewController(notificationVC, animated: true)
-    }
+ 
 
 }
 
