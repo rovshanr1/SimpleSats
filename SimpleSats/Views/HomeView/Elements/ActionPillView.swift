@@ -9,7 +9,7 @@ import UIKit
 
 class ActionPillView: UIView{
     private let iconImage = UIImageView()
-    private let titleLable = UILabel()
+    private let titleLabel = UILabel()
     private let circleView = UIView()
     
     var tapAction: (() -> Void)?
@@ -38,15 +38,15 @@ class ActionPillView: UIView{
         iconImage.contentMode = .scaleAspectFit
         iconImage.translatesAutoresizingMaskIntoConstraints = false
         
-        titleLable.text = title
-        titleLable.textColor = .white
-        titleLable.font = .lightLivvic(selfSize: 16)
-        titleLable.textAlignment = .center
-        titleLable.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.text = title
+        titleLabel.textColor = .white
+        titleLabel.font = .lightLivvic(selfSize: 16)
+        titleLabel.textAlignment = .center
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
         
         addSubview(circleView)
         circleView.addSubview(iconImage)
-        addSubview(titleLable)
+        addSubview(titleLabel)
         
         NSLayoutConstraint.activate([
             circleView.widthAnchor.constraint(equalToConstant: 60),
@@ -59,11 +59,11 @@ class ActionPillView: UIView{
             iconImage.widthAnchor.constraint(equalToConstant: 30),
             iconImage.heightAnchor.constraint(equalToConstant: 30),
             
-            titleLable.centerXAnchor.constraint(equalTo: centerXAnchor),
-            titleLable.topAnchor.constraint(equalTo: circleView.bottomAnchor, constant: 8),
-            titleLable.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
-            titleLable.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
-            titleLable.bottomAnchor.constraint(equalTo: bottomAnchor)
+            titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            titleLabel.topAnchor.constraint(equalTo: circleView.bottomAnchor, constant: 8),
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
+            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
+            titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
         
         
