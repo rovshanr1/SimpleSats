@@ -27,7 +27,7 @@ class ActionPillView: UIView{
     }
     
     private func setupUI(icon: UIImage?, title: String?) {
-        circleView.layer.cornerRadius = 30
+        circleView.layer.cornerRadius = 20
         circleView.layer.borderColor = UIColor.white.cgColor
         circleView.layer.borderWidth = 1
         circleView.backgroundColor = .clear
@@ -40,7 +40,7 @@ class ActionPillView: UIView{
         
         titleLabel.text = title
         titleLabel.textColor = .white
-        titleLabel.font = .lightLivvic(selfSize: 16)
+        titleLabel.font = .lightLivvic(selfSize: 12)
         titleLabel.textAlignment = .center
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         
@@ -49,15 +49,15 @@ class ActionPillView: UIView{
         addSubview(titleLabel)
         
         NSLayoutConstraint.activate([
-            circleView.widthAnchor.constraint(equalToConstant: 60),
-            circleView.heightAnchor.constraint(equalToConstant: 60),
+            circleView.widthAnchor.constraint(equalToConstant: 40),
+            circleView.heightAnchor.constraint(equalToConstant: 40),
             circleView.centerXAnchor.constraint(equalTo: centerXAnchor),
             circleView.topAnchor.constraint(equalTo: topAnchor),
             
             iconImage.centerXAnchor.constraint(equalTo: circleView.centerXAnchor),
             iconImage.centerYAnchor.constraint(equalTo: circleView.centerYAnchor),
-            iconImage.widthAnchor.constraint(equalToConstant: 30),
-            iconImage.heightAnchor.constraint(equalToConstant: 30),
+            iconImage.widthAnchor.constraint(equalToConstant: 20),
+            iconImage.heightAnchor.constraint(equalToConstant: 20),
             
             titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             titleLabel.topAnchor.constraint(equalTo: circleView.bottomAnchor, constant: 8),

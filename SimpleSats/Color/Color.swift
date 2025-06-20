@@ -12,6 +12,8 @@ extension UIColor{
     static let purpleBB = UIColor(named: "PurpleButtonBackground")
     static let purpleBBLO = UIColor(named: "PurpleButtonBackgroundLowOpacity")
     static let pinkTextColor = UIColor(named: "PinkTextColor")
+    static let tokenBackgroundColor = UIColor(named: "TokenCardBGColor")
+    static let tokenViewBGColor = UIColor(named: "TokenViewBG")
     
     
     

@@ -15,8 +15,8 @@ class HomeActionButtons: UIView {
     private let stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
-        stackView.alignment = .fill
-        stackView.distribution = .fillEqually
+        stackView.alignment = .center
+        stackView.distribution = .fill
         stackView.spacing = 12
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
@@ -45,11 +45,15 @@ class HomeActionButtons: UIView {
         stackView.addArrangedSubview(buyActionPill)
         
         addSubview(stackView)
+        
+        sendActionPill.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        receiveActionPill.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        buyActionPill.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: topAnchor),
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: trailingAnchor)
+            stackView.centerXAnchor.constraint(equalTo: centerXAnchor)
         ])
         
         sendActionPill.tapAction = {
