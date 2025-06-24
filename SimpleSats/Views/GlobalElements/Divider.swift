@@ -24,6 +24,7 @@ class Divider: UIView{
         else {
             NSLayoutConstraint.activate([
                 self.widthAnchor.constraint(equalToConstant: height)
+                
             ])
         }
     }

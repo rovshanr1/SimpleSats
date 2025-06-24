@@ -14,6 +14,8 @@ extension UIColor{
     static let pinkTextColor = UIColor(named: "PinkTextColor")
     static let tokenBackgroundColor = UIColor(named: "TokenCardBGColor")
     static let tokenViewBGColor = UIColor(named: "TokenViewBG")
+    static let tabBarBtnColor = UIColor(named: "TabBarBtnColor")
+    static let nonSelectedTI = UIColor(named: "NonSelectedTabIcon")
     
     
     

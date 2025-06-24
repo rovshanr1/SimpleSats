@@ -40,7 +40,7 @@ class TokenCardView: UIView {
     
     private var priceLabel: UILabel = {
         let label = UILabel()
-        label.font = .mediumLivvic(selfSize: 18)
+        label.font = .mediumLivvic(selfSize: 12)
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -104,7 +104,10 @@ class TokenCardView: UIView {
     
     private var selectedTimeRangeButton: UIButton!
     
+    
     private let hDivider = Divider(height: 1, isHorizontal: true)
+    private let priceLabelBottomDivider = Divider(height: 1, isHorizontal: true)
+
     private let vDivider = Divider(height: 1, isHorizontal: false)
     
     override init(frame: CGRect) {
@@ -127,8 +130,9 @@ class TokenCardView: UIView {
         addSubview(percentageLabel)
         addSubview(graphView)
         addSubview(priceLabel)
-        addSubview(changeValueLabel)
+        addSubview(changeValueLabel)		
         addSubview(hDivider)
+        addSubview(priceLabelBottomDivider)
         addSubview(vDivider)
         
         timeRangeStackView.addArrangedSubview(timeRange30mButton)
@@ -147,24 +151,37 @@ class TokenCardView: UIView {
             
             percentageLabel.topAnchor.constraint(equalTo: iconCircleView.bottomAnchor, constant: 8),
             percentageLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+    
+            graphView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            graphView.centerYAnchor.constraint(equalTo: tokenNameLabel.centerYAnchor),
+            graphView.widthAnchor.constraint(equalToConstant: 60),
+            graphView.heightAnchor.constraint(equalToConstant: 30),
             
             hDivider.topAnchor.constraint(equalTo: percentageLabel.bottomAnchor, constant: 12),
             hDivider.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             hDivider.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             hDivider.heightAnchor.constraint(equalToConstant: 1),
             
-            graphView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            graphView.centerYAnchor.constraint(equalTo: tokenNameLabel.centerYAnchor),
-            graphView.widthAnchor.constraint(equalToConstant: 60),
-            graphView.heightAnchor.constraint(equalToConstant: 30),
-            
-            priceLabel.topAnchor.constraint(equalTo: tokenNameLabel.bottomAnchor, constant: 16),
+            priceLabel.topAnchor.constraint(equalTo: hDivider.bottomAnchor, constant: 8),
             priceLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
 
-            changeValueLabel.leadingAnchor.constraint(equalTo: priceLabel.trailingAnchor, constant: 8),
+            
+            vDivider.leadingAnchor.constraint(equalTo: priceLabel.trailingAnchor, constant: 8),
+            vDivider.widthAnchor.constraint(equalToConstant: 1),
+            vDivider.centerYAnchor.constraint(equalTo: priceLabel.centerYAnchor),
+            vDivider.heightAnchor.constraint(equalToConstant: 14),
+            
+            
+            changeValueLabel.leadingAnchor.constraint(equalTo: vDivider.trailingAnchor, constant: 8),
             changeValueLabel.centerYAnchor.constraint(equalTo: priceLabel.centerYAnchor),
             
-            timeRangeStackView.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: 16),
+            priceLabelBottomDivider.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: 12),
+            priceLabelBottomDivider.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            priceLabelBottomDivider.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            priceLabelBottomDivider.heightAnchor.constraint(equalToConstant: 1),
+
+            
+            timeRangeStackView.topAnchor.constraint(equalTo: priceLabelBottomDivider.bottomAnchor, constant: 16),
             timeRangeStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             timeRangeStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             timeRangeStackView.heightAnchor.constraint(equalToConstant: 30),

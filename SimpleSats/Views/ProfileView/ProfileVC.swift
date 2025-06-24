@@ -1,19 +1,18 @@
 //
-//  NotificationVC.swift
+//  ProfileVC.swift
 //  SimpleSats
 //
-//  Created by Rovshan Rasulov on 13.06.25.
+//  Created by Rovshan Rasulov on 24.06.25.
 //
 
 import UIKit
 
-class NotificationV: UIViewController {
+class ProfileVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Notification"
-        view.backgroundColor = UIColor.appBackgroundColor
 
+        // Do any additional setup after loading the view.
     }
     
 

@@ -6,10 +6,9 @@
 //
 
 import UIKit
-import SwiftUI
 import Combine
 
-class HomeV: UIViewController {
+class HomeVC: UIViewController {
     
     private let viewModel = HomeVM()
     private var cancellable = Set<AnyCancellable>()
@@ -64,7 +63,7 @@ class HomeV: UIViewController {
     }
     
     @objc private func handleNotification() {
-        let notificationVC = NotificationV()
+        let notificationVC = NotificationVC()
         navigationController?.pushViewController(notificationVC, animated: true)
     }
     
