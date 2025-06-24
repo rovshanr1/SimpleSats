@@ -23,10 +23,14 @@ class MainTabView: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addSomeTabItems()
+        btnMiddle.frame = CGRect(x: Int(self.tabBar.bounds.width)/2 - 30, y: -20, width: 60, height: 60)
     }
     
     override func loadView() {
         super.loadView()
+        self.tabBar.addSubview(btnMiddle)
+        setupCustomTabBar()
     }
  
     func setupCustomTabBar() {
@@ -57,7 +61,27 @@ class MainTabView: UITabBarController {
     
     
     func getPathForTabBar() -> UIBezierPath {
+        let frameWidth = self.tabBar.bounds.width
+        let frameHeight = self.tabBar.bounds.height + 20
+        let holeWidth = 150
+        let holeHeight = 50
+        let leftXUntilHole = Int(frameWidth/2) - Int(holeWidth/2)
 
+        let path: UIBezierPath = UIBezierPath()
+        path.move(to: CGPoint(x: 0, y: 0))
+        path.addLine(to: CGPoint(x: leftXUntilHole, y: 0)) //line.1
+        path.addCurve(to: CGPoint(x: leftXUntilHole + (holeWidth/3), y: holeHeight/2), controlPoint1: CGPoint(x: leftXUntilHole + ((holeWidth/3)/8)*6, y: 0), controlPoint2: CGPoint(x: leftXUntilHole + ((holeWidth/3)/8)*8, y: holeHeight/2)) // part 1
+        
+        path.addCurve(to: CGPoint(x: leftXUntilHole + (2*holeWidth)/3, y: holeHeight/2), controlPoint1: CGPoint(x: leftXUntilHole + (holeWidth/3) + (holeWidth/3)/3*2/5, y: (holeHeight/2)*6/4), controlPoint2: CGPoint(x: leftXUntilHole + (holeWidth/3) + (holeWidth/3)/3*2 + (holeWidth/3)/3*3/5, y: (holeHeight/2)*6/4)) // part II
+
+        path.addCurve(to: CGPoint(x: leftXUntilHole + holeWidth, y: 0), controlPoint1: CGPoint(x: leftXUntilHole + (2*holeWidth)/3,y: holeHeight/2), controlPoint2: CGPoint(x: leftXUntilHole + (2*holeWidth)/3 + (holeWidth/3)*2/8, y: 0)) // part III
+        path.addLine(to: CGPoint(x: frameWidth, y: 0)) // 2. Line
+        path.addLine(to: CGPoint(x: frameWidth, y: frameHeight)) // 3. Line
+        path.addLine(to: CGPoint(x: 0, y: frameHeight)) // 4. Line
+        path.addLine(to: CGPoint(x: 0, y: 0)) // 5. Line
+        path.close()
+        
+        return path
     }
 
 }
