@@ -38,8 +38,8 @@ class MainTabView: UITabBarController {
         let shape = CAShapeLayer()
         shape.path = path.cgPath
         shape.lineWidth = 3
-        shape.strokeColor = UIColor.white.cgColor
-        shape.fillColor = UIColor.white.cgColor
+        shape.strokeColor = UIColor.tabBarBackgroundColor?.cgColor
+        shape.fillColor = UIColor.tabBarBackgroundColor?.cgColor
         self.tabBar.layer.insertSublayer(shape, at: 0)
         self.tabBar.itemWidth = 40
         self.tabBar.itemPositioning = .centered

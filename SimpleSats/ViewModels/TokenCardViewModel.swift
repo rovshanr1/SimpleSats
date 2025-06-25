@@ -27,7 +27,7 @@ struct TokenCardViewModel: Identifiable{
         self.isPositiveChange = changePercentage >= 0
         
         let sign: String = changePercentage >= 0 ? "+" : ""
-        self.percentageChange = String(format: "%.2f%% in 24h", sign, changePercentage)
+        self.percentageChange = String(format: "%@%.2f%% in 24h", sign, changePercentage)
         
         self.price = "$\(String(format: "%.2f", coin.currentPrice))"
 

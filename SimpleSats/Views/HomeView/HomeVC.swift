@@ -22,8 +22,13 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        navigationController?.navigationBar.prefersLargeTitles = false
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = false
+    }
     private func setupUI(){
         setupGradientBackground()
         setupNavigationBar()
@@ -43,7 +48,10 @@ class HomeVC: UIViewController {
             backgroundGlow.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             backgroundGlow.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+
+        view.sendSubviewToBack(backgroundGlow)
     }
+    
     
     
     private func setupNavigationBar() {
@@ -121,7 +129,7 @@ class HomeVC: UIViewController {
             tokensSectionView.topAnchor.constraint(equalTo: actionButtonView.bottomAnchor, constant: 32),
             tokensSectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tokensSectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tokensSectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16)
+            tokensSectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
     
