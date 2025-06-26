@@ -6,11 +6,27 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		44632F542DFDEAEE00C2AEB4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 447CFACA2DFB154E0085FC90 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 447CFAD12DFB154E0085FC90;
+			remoteInfo = SimpleSats;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		44632F502DFDEAEE00C2AEB4 /* SimpleSatsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleSatsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		447CFAD22DFB154E0085FC90 /* SimpleSats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleSats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		44632F512DFDEAEE00C2AEB4 /* SimpleSatsTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SimpleSatsTests;
+			sourceTree = "<group>";
+		};
 		447CFAD42DFB154E0085FC90 /* SimpleSats */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = SimpleSats;
@@ -19,6 +35,13 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		44632F4D2DFDEAEE00C2AEB4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		447CFACF2DFB154E0085FC90 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -33,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				447CFAD42DFB154E0085FC90 /* SimpleSats */,
+				44632F512DFDEAEE00C2AEB4 /* SimpleSatsTests */,
 				447CFAD32DFB154E0085FC90 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				447CFAD22DFB154E0085FC90 /* SimpleSats.app */,
+				44632F502DFDEAEE00C2AEB4 /* SimpleSatsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,6 +73,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		44632F4F2DFDEAEE00C2AEB4 /* SimpleSatsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 44632F562DFDEAEE00C2AEB4 /* Build configuration list for PBXNativeTarget "SimpleSatsTests" */;
+			buildPhases = (
+				44632F4C2DFDEAEE00C2AEB4 /* Sources */,
+				44632F4D2DFDEAEE00C2AEB4 /* Frameworks */,
+				44632F4E2DFDEAEE00C2AEB4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				44632F552DFDEAEE00C2AEB4 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				44632F512DFDEAEE00C2AEB4 /* SimpleSatsTests */,
+			);
+			name = SimpleSatsTests;
+			packageProductDependencies = (
+			);
+			productName = SimpleSatsTests;
+			productReference = 44632F502DFDEAEE00C2AEB4 /* SimpleSatsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		447CFAD12DFB154E0085FC90 /* SimpleSats */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 447CFAE82DFB15500085FC90 /* Build configuration list for PBXNativeTarget "SimpleSats" */;
@@ -77,9 +125,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 2600;
+				LastSwiftUpdateCheck = 1640;
 				LastUpgradeCheck = 2600;
 				TargetAttributes = {
+					44632F4F2DFDEAEE00C2AEB4 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 447CFAD12DFB154E0085FC90;
+					};
 					447CFAD12DFB154E0085FC90 = {
 						CreatedOnToolsVersion = 26.0;
 					};
@@ -100,11 +152,19 @@
 			projectRoot = "";
 			targets = (
 				447CFAD12DFB154E0085FC90 /* SimpleSats */,
+				44632F4F2DFDEAEE00C2AEB4 /* SimpleSatsTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		44632F4E2DFDEAEE00C2AEB4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		447CFAD02DFB154E0085FC90 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -115,6 +175,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		44632F4C2DFDEAEE00C2AEB4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		447CFACE2DFB154E0085FC90 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -124,7 +191,53 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		44632F552DFDEAEE00C2AEB4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 447CFAD12DFB154E0085FC90 /* SimpleSats */;
+			targetProxy = 44632F542DFDEAEE00C2AEB4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		44632F572DFDEAEE00C2AEB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2Z3JZRB82A;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ios.portfolioMe.SimpleSatsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimpleSats.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SimpleSats";
+			};
+			name = Debug;
+		};
+		44632F582DFDEAEE00C2AEB4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2Z3JZRB82A;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ios.portfolioMe.SimpleSatsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimpleSats.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SimpleSats";
+			};
+			name = Release;
+		};
 		447CFAE92DFB15500085FC90 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -317,6 +430,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		44632F562DFDEAEE00C2AEB4 /* Build configuration list for PBXNativeTarget "SimpleSatsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44632F572DFDEAEE00C2AEB4 /* Debug */,
+				44632F582DFDEAEE00C2AEB4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		447CFACD2DFB154E0085FC90 /* Build configuration list for PBXProject "SimpleSats" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

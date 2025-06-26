@@ -12,10 +12,9 @@ class MetamaskButton: UIButton {
         super.init(frame: frame)
         setupButton()
     }
-    
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        setupButton()
+        fatalError( "init(coder:) has not been implemented" )
     }
     
     private func setupButton(){
@@ -49,7 +48,7 @@ class MetamaskButton: UIButton {
 
         config.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
             var outgoing = incoming
-            outgoing.font = UIFont(name: "Livvic-Medium", size: 16)
+            outgoing.font = .mediumLivvic(selfSize: 16)
             return outgoing
         }
         
