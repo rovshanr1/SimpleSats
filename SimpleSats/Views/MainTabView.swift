@@ -18,6 +18,9 @@ class MainTabView: UITabBarController {
         btn.layer.shadowOpacity = 0.2
         btn.layer.shadowOffset = CGSize(width: 4, height: 4)
         
+        let config = UIImage.SymbolConfiguration(pointSize: 24 , weight: .medium)
+        let image = UIImage(systemName: "wallet.bifold.fill", withConfiguration: config)
+        btn.setImage(image, for: .normal)
         return btn
     }()
     
@@ -38,7 +41,7 @@ class MainTabView: UITabBarController {
         let shape = CAShapeLayer()
         shape.path = path.cgPath
         shape.lineWidth = 3
-        shape.strokeColor = UIColor.tabBarBackgroundColor?.cgColor
+        shape.strokeColor = UIColor.clear.cgColor
         shape.fillColor = UIColor.tabBarBackgroundColor?.cgColor
         self.tabBar.layer.insertSublayer(shape, at: 0)
         self.tabBar.itemWidth = 40
@@ -55,14 +58,14 @@ class MainTabView: UITabBarController {
         setViewControllers([home, profile], animated: false)
         guard let items = tabBar.items else{ return }
         items[0].image = UIImage(systemName: "clock.arrow.trianglehead.counterclockwise.rotate.90")
-        items[1].image = UIImage(systemName: "dollarsign.arrow.trianglehead.counterclockwise.rotate.90")
+        items[1].image = UIImage(systemName: "person.fill")
     }
 
     
     
     func getPathForTabBar() -> UIBezierPath {
         let frameWidth = self.tabBar.bounds.width
-        let frameHeight = self.tabBar.bounds.height + 20
+        let frameHeight = self.tabBar.bounds.height + 49
         let holeWidth = 150
         let holeHeight = 50
         let leftXUntilHole = Int(frameWidth/2) - Int(holeWidth/2)

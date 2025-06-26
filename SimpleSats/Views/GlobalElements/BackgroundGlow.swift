@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeViewBackgroundGlow: UIView {
+class BackgroundGlow: UIView {
     
     private var gradientLayers: [CAGradientLayer] = []
     

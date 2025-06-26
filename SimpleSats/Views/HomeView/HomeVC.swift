@@ -13,7 +13,7 @@ class HomeVC: UIViewController {
     private let viewModel = HomeVM()
     private var cancellable = Set<AnyCancellable>()
     
-    private let backgroundGlow = HomeViewBackgroundGlow()
+    private let backgroundGlow = BackgroundGlow()
     private let actionButtonView = HomeActionButtons()
     private let tokensSectionView = TokensView()
     
