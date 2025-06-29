@@ -21,6 +21,16 @@
 		447CFAD22DFB154E0085FC90 /* SimpleSats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleSats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		447EE7BA2E11357100CBCF97 /* Exceptions for "SimpleSats" folder in "SimpleSats" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 447CFAD12DFB154E0085FC90 /* SimpleSats */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		44632F512DFDEAEE00C2AEB4 /* SimpleSatsTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
@@ -29,6 +39,9 @@
 		};
 		447CFAD42DFB154E0085FC90 /* SimpleSats */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				447EE7BA2E11357100CBCF97 /* Exceptions for "SimpleSats" folder in "SimpleSats" target */,
+			);
 			path = SimpleSats;
 			sourceTree = "<group>";
 		};
