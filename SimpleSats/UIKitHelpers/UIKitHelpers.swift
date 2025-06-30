@@ -22,6 +22,7 @@ extension UIViewController{
     }
 }
 
+//TODO: Use Combine
 extension UIViewController {
     func observeKeyboardAdjustments(for scrollView: UIScrollView) {
         NotificationCenter.default.addObserver(

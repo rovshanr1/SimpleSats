@@ -24,6 +24,9 @@ class ProfileVC: UIViewController {
     private let emailTextField = CustomTextField(type: .email, placeholder: "plesae enter your email")
     private let passwordTextField = CustomTextField(type: .password, placeholder: "please enter yout password")
     
+    //Custom UIButtons
+    private let settingButton = SettingsButton(frame: .zero)
+    private let informationButton = InformationButton(frame: .zero)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +71,8 @@ class ProfileVC: UIViewController {
         setupNameTextField()
         setEmailTextField()
         setPasswordTextFild()
+        setSettingButton()
+        setupInformationButton()
     }
     
     private func setupGradientBackground() {
@@ -116,7 +121,7 @@ class ProfileVC: UIViewController {
         nameTextField.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            lable.topAnchor.constraint(equalTo: photosPicker.bottomAnchor, constant: 50),
+            lable.topAnchor.constraint(equalTo: photosPicker.bottomAnchor, constant: 30),
             lable.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 22),
             
             nameTextField.topAnchor.constraint(equalTo: lable.bottomAnchor, constant: 4),
@@ -169,10 +174,47 @@ class ProfileVC: UIViewController {
             passwordTextField.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 22),
             passwordTextField.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -22),
             passwordTextField.heightAnchor.constraint(equalToConstant: 54),
-            passwordTextField.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -40)
 
             
         ])
+    }
+    
+    private func setSettingButton(){
+        settingButton.addTarget(self, action: #selector(settingButtonTapped), for: .touchUpInside)
+        contentView.addSubview(settingButton)
+        settingButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            settingButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 32),
+            settingButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 42),
+            settingButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -42),
+            settingButton.heightAnchor.constraint(equalToConstant: 36),
+        ])
+        
+    }
+    
+    @objc private func settingButtonTapped(){
+        let settingVC = SettingVC()
+        navigationController?.pushViewController(settingVC, animated: true)
+    }
+    
+    private func setupInformationButton(){
+        informationButton.addTarget(self, action: #selector(informationButtonTapped), for: .touchUpInside)
+        contentView.addSubview(informationButton)
+        informationButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            informationButton.topAnchor.constraint(equalTo: settingButton.bottomAnchor,constant: 24),
+            informationButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 42),
+            informationButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -42),
+            informationButton.heightAnchor.constraint(equalToConstant: 36),
+            informationButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -40)
+        ])
+    }
+    
+    @objc private func informationButtonTapped(){
+        let informationVC = InformationVC()
+        navigationController?.pushViewController(informationVC, animated: true)
     }
     
 }
